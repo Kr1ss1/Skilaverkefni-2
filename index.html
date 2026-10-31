@@ -1,11 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<!doctype html>
+<html lang="is">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verkefnalisti</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Verkefnalisti</h1>
+      <p>Haltu utan um öll verkefnin þín</p>
+    </header>
+
+    <main class="container">
+      <section class="card" aria-labelledby="stats-heading">
+        <h2 id="stats-heading">Svona stendur þú</h2>
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-number" id="total-count">0</span>
+            <span class="stat-label">Samtals</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" id="done-count">0</span>
+            <span class="stat-label">Lokið</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" id="open-count">0</span>
+            <span class="stat-label">Ólokið</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="add-heading">
+        <h2 id="add-heading">Hvað þarf að gera?</h2>
+        <form id="task-form" class="task-form">
+          <label for="task-input">Skrifaðu verkefnið hér</label>
+          <div class="form-row">
+            <input
+              type="text"
+              id="task-input"
+              placeholder="T.d. Skilaverkefni"
+              autocomplete="off"
+            />
+            <button type="submit" class="button-primary">Bæta við</button>
+          </div>
+          <p id="form-error" class="form-error" role="alert"></p>
+        </form>
+      </section>
+
+      <section class="card" aria-labelledby="list-heading">
+        <h2 id="list-heading">Verkefnin þín</h2>
+        <div class="filters">
+          <button type="button" class="filter-button active" data-filter="all">
+            Öll
+          </button>
+          <button type="button" class="filter-button" data-filter="open">
+            Ólokin
+          </button>
+          <button type="button" class="filter-button" data-filter="done">
+            Lokin
+          </button>
+        </div>
+        <ul id="task-list" class="task-list"></ul>
+        <li id="empty-message" class="empty-message"></li>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; Kristófer</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
